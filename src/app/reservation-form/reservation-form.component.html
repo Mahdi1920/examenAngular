@@ -1,0 +1,38 @@
+<h1>réserver la Propriéte avec ID </h1>
+<form [formGroup]="reservation">
+   Nom du Locataire:
+   <input formControlName="name"/>
+   <div *ngIf="reservation.get('name')!.invalid && (reservation.get('name')!.touched || reservation.get('name')!.dirty)">
+    <div *ngIf="reservation.get('name')!.errors!['required']">
+        name is required
+    </div>
+    
+</div>
+   Numéro de Téléphone:<br> 
+   <input formControlName="phoneNumber"/>
+   <div *ngIf="reservation.get('phoneNumber')!.invalid && (reservation.get('phoneNumber')!.touched || reservation.get('phoneNumber')!.dirty)">
+    <div *ngIf="reservation.get('phoneNumber')!.errors!['required']">
+        phoneNumber is required
+    </div>
+    <div *ngIf="reservation.get('phoneNumber')!.errors!['pattern']">
+        phoneNumber is invalid
+    </div>
+</div>
+   Date début de la location:<br> 
+   <input formControlName="startDate"/>
+   <div *ngIf="reservation.get('startDate')!.invalid && (reservation.get('startDate')!.touched || reservation.get('startDate')!.dirty)">
+    <div *ngIf="reservation.get('startDate')!.errors!['required']">
+        startDate is required
+    </div>
+
+</div>
+   Date fin de la location:<br> 
+   <input formControlName="endDate"/>
+   <div *ngIf="reservation.get('endDate')!.invalid && (reservation.get('endDate')!.touched || reservation.get('endDate')!.dirty)">
+    <div *ngIf="reservation.get('endDate')!.errors!['required']">
+        endDate is required
+    </div>
+    
+</div>
+   <input type="submit" value="valider" [disabled]="reservation.invalid" (click)="reserver()"/>
+</form>

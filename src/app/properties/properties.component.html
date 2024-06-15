@@ -1,0 +1,33 @@
+<h1>liste des propertés</h1>
+<input type="text" [(ngModel)]="searchText1" />
+<input type="text" [(ngModel)]="searchText2" (change)="searchPrixMaxMin()" />
+<button (click)="searchPrixMaxMin()">search</button>
+
+<div *ngIf="propertiesSearched.length == 0">
+  <table>
+    <tr *ngFor="let p of properties">
+      <td>{{ p.name }}</td>
+      <td>Adresse: {{ p.adresse }}</td>
+      <td>prix: {{ p.price }}</td>
+
+      <td>
+        <input
+          type="submit"
+          value="Reserver la properté"
+          [routerLink]="['/reserve/', p.id]"
+          [disabled]="p.available == false"
+        />
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="propertiesSearched.length !== 0">
+  <table>
+    <tr *ngFor="let pr of propertiesSearched">
+      <td>{{ pr.name }}</td>
+      <td>Adresse: {{ pr.adresse }}</td>
+      <td>prix: {{ pr.price }}</td>
+    </tr>
+  </table>
+</div>

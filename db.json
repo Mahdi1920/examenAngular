@@ -1,0 +1,36 @@
+{
+  "property": [
+    {
+      "id": "1",
+      "name": "Maison de compagne",
+      "adresse": "456 Chemins des Fleurs",
+      "price": 250,
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Studio en centre-ille",
+      "adresse": "789 Avenue du Centre",
+      "price": 800,
+      "available": false
+    },
+    {
+      "id": "a6ad",
+      "name": "mahdi",
+      "phoneNumber": "28249582",
+      "startDate": "18/05/2024",
+      "endDate": "01/06/2024",
+      "available": null
+    }
+  ],
+  "reservation": [
+    {
+      "id": "6593",
+      "name": "mahdi",
+      "phoneNumber": "28249582",
+      "startDate": "18/05/2024",
+      "endDate": "01/06/2024",
+      "available": null
+    }
+  ]
+}
